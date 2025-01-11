@@ -46,6 +46,8 @@ def processCommmand(c):
         webbrowser.open("https://www.linkedin.com/")
     elif "open youtube" in c.lower():
         webbrowser.open("https://youtube.com")
+    elif "open camera" in c.lower():
+        webbrowser.open("https://apps.microsoft.com/detail/9WZDNCRFJBBG?hl=en-us&gl=IN&ocid=pdpshare")
     elif "open gpt" in c.lower():
         webbrowser.open("https://openai.com/index/chatgpt/")
     elif "open snapchat" in c.lower():
@@ -89,7 +91,7 @@ def processCommmand(c):
             print(f"An error occurred: {str(e)}")
 
 if __name__== "__main__":
-    speak("Intializing Jarvis.....")
+    speak("Intializing LomuS.....")
     while True:
         # audio_file = sr.AudioFile('path_to_your_audio_file.wav')
         r=sr.Recognizer()
@@ -101,7 +103,7 @@ if __name__== "__main__":
                 audio=r.listen(source,timeout=5, phrase_time_limit=5)
             word = r.recognize_google(audio)
             # print(word)
-            if(word.lower()=="jarvis"):
+            if(word.lower()=="LomuS"):
                 speak("yes?")
                 #listen for command
                 with sr.Microphone() as source:
@@ -118,15 +120,15 @@ if __name__== "__main__":
             print(f"Could not request results from Google Speech Recognition service; {e}")
             speak("Sorry, there was an error with the recognition service.")
         except Exception as e: 
-            print(f"Jarvis error: {e}")
+            print(f"LomuS error: {e}")
             speak("An error occurred. Please try again.")
         # except Exception as e:
-        #     print("jarvis error : {0}".format(e))
+        #     print("LOMUS error : {0}".format(e))
 
         # except sr.UnknownValueError :
-        #     print("jarvis could not understand audio")
+        #     print("LomuS could not understand audio")
         # except sr.WaitTimeoutError:
         #     print("kuch nahi bola")
 
 
-        # listen for the wake word jarvis
+        # listen for the wake word LomuS
